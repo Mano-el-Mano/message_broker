@@ -1,0 +1,79 @@
+15:37:07,225 root INFO user has purchased {'name': 'Gucci Tshirt', 'discount': 200}
+15:44:50,256 pika.adapters.utils.io_services_utils ERROR _AsyncBaseTransport._produce() failed, aborting connection: error=ConnectionResetError(104, 'Connection reset by peer'); sock=<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46318)>; Caller's stack:
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 39, in setup_topic
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 25, in on_message_callback
+    advertising_handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 25, in handle
+    switch(key, body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 22, in switch
+    'autumn_offers': self.handle_autumn_offers(body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 29, in handle_autumn_offers
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 39, in setup_topic
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 25, in on_message_callback
+    advertising_handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 25, in handle
+    switch(key, body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 22, in switch
+    'autumn_offers': self.handle_autumn_offers(body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/assignment1/advertising_callback.py", line 29, in handle_autumn_offers
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+15:44:50,256 pika.adapters.utils.io_services_utils INFO _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=ConnectionResetError(104, 'Connection reset by peer'); <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46318)>
+15:44:50,256 pika.adapters.utils.io_services_utils INFO Deactivating transport: state=1; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46318)>
+15:44:50,257 pika.adapters.base_connection ERROR connection_lost: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+15:44:50,257 pika.connection INFO AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",); pending-error=None
+15:44:50,257 pika.connection INFO Stack terminated due to StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+15:44:50,258 pika.adapters.utils.io_services_utils INFO Closing transport socket and unlinking: state=2; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 46318)>
+15:44:50,258 pika.adapters.blocking_connection ERROR Unexpected connection close detected: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)

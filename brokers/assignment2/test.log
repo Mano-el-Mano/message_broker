@@ -1,0 +1,255 @@
+b18:41:07,337 root INFO user has purchased {'id': 'ea278382-6350-46da-a470-13446122b058', 'price': 5000}
+18:41:19,325 root INFO user has purchased {'id': '5793173a-fb23-40d1-b19d-6686442a72ea', 'price': 7000}
+18:41:22,577 root INFO user has purchased {'id': '5793173a-fb23-40d1-b19d-6686442a72ea', 'price': 7000}
+18:42:10,932 root INFO user has purchased {'id': 'd328af5d-2f61-414a-902a-8dd42ff08c79', 'price': 5000}
+18:42:28,537 root INFO user has purchased {'id': 'c94bbe32-deed-484b-b94e-8aa3db61fe82', 'price': 7000}
+18:42:35,481 root INFO user has purchased {'id': 'a065966d-41ba-497e-9acc-27afe5695983', 'price': 8000}
+18:43:14,425 root INFO user has purchased {'id': '77a161fa-dc88-4ae9-abe8-4117459e0e8a', 'price': 5000}
+18:43:43,336 root INFO user has purchased {'id': 'd621c890-d247-4540-bec3-894546f25c91', 'price': 8000}
+18:43:46,646 root INFO user has purchased {'id': 'd621c890-d247-4540-bec3-894546f25c91', 'price': 8000}
+18:44:36,218 root INFO user has purchased {'id': '42311337-c8d9-4a5e-9f4c-d24318041d07', 'price': 5000}
+18:45:18,138 root INFO user has purchased {'id': '97136c89-d96e-4479-86d5-e391d09d85c6', 'price': 7000}
+18:49:03,53 pika.adapters.utils.io_services_utils ERROR _AsyncBaseTransport._produce() failed, aborting connection: error=ConnectionResetError(104, 'Connection reset by peer'); sock=<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 50518)>; Caller's stack:
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 30, in handle
+    switch(key, body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 27, in switch
+    'autumn_offers': self.handle_autumn_offers(body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 34, in handle_autumn_offers
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 30, in handle
+    switch(key, body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 27, in switch
+    'autumn_offers': self.handle_autumn_offers(body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 34, in handle_autumn_offers
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+18:49:03,54 pika.adapters.utils.io_services_utils INFO _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=ConnectionResetError(104, 'Connection reset by peer'); <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 50518)>
+18:49:03,54 pika.adapters.utils.io_services_utils INFO Deactivating transport: state=1; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 50518)>
+18:49:03,54 pika.adapters.base_connection ERROR connection_lost: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+18:49:03,55 pika.connection INFO AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",); pending-error=None
+18:49:03,55 pika.connection INFO Stack terminated due to StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+18:49:03,55 pika.adapters.utils.io_services_utils INFO Closing transport socket and unlinking: state=2; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 50518)>
+18:49:03,56 pika.adapters.blocking_connection ERROR Unexpected connection close detected: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+18:49:08,814 root INFO user has purchased {'id': '85587849-0cbc-4d59-8293-5433b26bfd66', 'price': 5000}
+18:56:29,812 root INFO user has purchased {'id': '19f2a3dd-1313-4d65-8fe7-291ba6736748', 'price': 5000}
+18:57:23,914 root INFO user has purchased {'id': 'c76c8715-bc33-40df-a68b-3a32ebb733a7', 'price': 5000}
+18:57:49,663 root INFO user has purchased {'id': '9e6d6ba7-df5f-45f3-91c2-fc179e9b7cda', 'price': 7000}
+18:58:15,795 root INFO user has purchased {'id': '49371c75-59e1-4eb9-b889-9bd1e2dcb25f', 'price': 8000}
+18:58:30,843 root INFO user has purchased {'id': '542c07b1-9a10-4448-a9ba-b7cc73019d26', 'price': 7000}
+18:58:45,935 root INFO user has purchased {'id': '9c881aeb-3072-4a27-a397-c4b8269fbba2', 'price': 8000}
+18:59:07,406 root INFO user has purchased {'id': 'ae893e6b-0637-4040-87cd-1934626d5839', 'price': 5000}
+18:59:09,674 root INFO user has purchased {'id': '17c2ba23-1dbd-45ef-b739-179c50598eed', 'price': 7000}
+18:59:11,825 root INFO user has purchased {'id': '2e88c88f-448b-4871-8918-de938ca58c7c', 'price': 8000}
+19:45:41,591 pika.adapters.utils.io_services_utils ERROR _AsyncBaseTransport._produce() failed, aborting connection: error=ConnectionResetError(104, 'Connection reset by peer'); sock=<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51354)>; Caller's stack:
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 22, in handle
+    self.handle_loans(body),
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 47, in handle_loans
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 22, in handle
+    self.handle_loans(body),
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 47, in handle_loans
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+19:45:41,592 pika.adapters.utils.io_services_utils INFO _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=ConnectionResetError(104, 'Connection reset by peer'); <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51354)>
+19:45:41,592 pika.adapters.utils.io_services_utils INFO Deactivating transport: state=1; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51354)>
+19:45:41,593 pika.adapters.base_connection ERROR connection_lost: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:45:41,593 pika.connection INFO AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",); pending-error=None
+19:45:41,593 pika.connection INFO Stack terminated due to StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:45:41,594 pika.adapters.utils.io_services_utils INFO Closing transport socket and unlinking: state=2; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 51354)>
+19:45:41,594 pika.adapters.blocking_connection ERROR Unexpected connection close detected: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:45:54,534 root INFO user has purchased {'id': 'df246831-b3b5-48ef-979c-24d95cfa65bb', 'price': 5000}
+19:56:52,400 pika.adapters.utils.io_services_utils ERROR _AsyncBaseTransport._produce() failed, aborting connection: error=ConnectionResetError(104, 'Connection reset by peer'); sock=<socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54030)>; Caller's stack:
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 22, in handle
+    self.handle_loans(body),
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 47, in handle_loans
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 58, in setup_fanout
+    channel.start_consuming()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1866, in start_consuming
+    self._process_data_events(time_limit=None)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 2027, in _process_data_events
+    self.connection.process_data_events(time_limit=time_limit)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 834, in process_data_events
+    self._dispatch_channel_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 566, in _dispatch_channel_events
+    impl_channel._get_cookie()._dispatch_events()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/blocking_connection.py", line 1493, in _dispatch_events
+    consumer_info.on_message_callback(self, evt.method,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/consumer.py", line 24, in on_message_callback
+    handler.handle(binding_key, parsed_body)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 22, in handle
+    self.handle_loans(body),
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/brokers/callback_handler.py", line 47, in handle_loans
+    answer = input(f"""
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 1097, in _on_socket_writable
+    self._produce()
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 819, in _produce
+    num_bytes_sent = self._sigint_safe_send(self._sock,
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 79, in retry_sigint_wrap
+    return func(*args, **kwargs)
+  File "/home/kristoffer/Desktop/projects/schoolwork/messagequeue/venv/lib/python3.8/site-packages/pika/adapters/utils/io_services_utils.py", line 861, in _sigint_safe_send
+    return sock.send(data)
+ConnectionResetError: [Errno 104] Connection reset by peer
+19:56:52,402 pika.adapters.utils.io_services_utils INFO _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=ConnectionResetError(104, 'Connection reset by peer'); <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54030)>
+19:56:52,402 pika.adapters.utils.io_services_utils INFO Deactivating transport: state=1; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54030)>
+19:56:52,403 pika.adapters.base_connection ERROR connection_lost: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:56:52,403 pika.connection INFO AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",); pending-error=None
+19:56:52,403 pika.connection INFO Stack terminated due to StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:56:52,404 pika.adapters.utils.io_services_utils INFO Closing transport socket and unlinking: state=2; <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 54030)>
+19:56:52,404 pika.adapters.blocking_connection ERROR Unexpected connection close detected: StreamLostError: ("Stream connection lost: ConnectionResetError(104, 'Connection reset by peer')",)
+19:56:58,621 root INFO user has purchased {'id': '39ff42a9-d085-47a2-a713-cca9256e3737', 'price': 5000}
+19:57:21,646 root INFO user has purchased {'id': '992df0e2-669b-4f33-a6c6-0308afef0d38', 'price': 5000}
+19:57:55,905 root INFO user has purchased {'id': '6f373c09-e56f-448e-a2e7-86f5a69b06ff', 'price': 5000}
+19:58:08,55 root INFO user has purchased {'id': '6e25f93d-e94e-4670-b341-5fc2bc45708b', 'price': 7000}
+19:59:09,872 root INFO user has purchased {'id': 'c316de92-4344-4149-b259-6c5547f99a9d', 'price': 8000}
+19:59:33,542 root INFO user has purchased {'id': 'f1054a4f-850c-4903-99bd-4f5681a88380', 'price': 5000}
+19:59:38,256 root INFO user has purchased {'id': 'd6ff85ce-aa93-4dbd-b747-b8f9e0e98c09', 'price': 7000}
